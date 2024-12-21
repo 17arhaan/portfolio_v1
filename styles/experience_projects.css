@@ -1,0 +1,169 @@
+/* General Page Settings */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #121212;
+    color: #ffffff;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Header/Nav Settings - Ensuring Compatibility */
+header {
+    background-color: #1e1e1e;
+    padding: 1rem 2rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.header-logo {
+    display: flex;
+    align-items: center;
+}
+
+.header-logo img {
+    width: 50px;
+    margin-right: 15px;
+}
+
+.header-logo h1 {
+    font-size: 1.5rem;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 1rem;
+    padding: 5px 10px;
+    border-radius: 4px;
+    transition: color 0.3s, background-color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #00aaff;
+    background-color: #333;
+}
+
+
+/* Main Content Settings */
+main {
+    flex: 1;
+    margin-top: 100px; /* Ensure main content starts below the fixed header */
+    padding: 20px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Container for Experience Cards */
+.experience-container {
+    width: 90%;
+    max-width: 800px;
+    margin: auto;
+}
+
+/* Card Styling */
+.card {
+    background-color: #1e1e1e;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 20px 0;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5);
+    color: #ffffff;
+}
+
+.card-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.row {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.image-container {
+    flex-shrink: 0;
+}
+
+.company-logo {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+}
+
+.company-info {
+    flex-grow: 1;
+}
+
+.card-title .company-name {
+    font-size: 1.5rem;
+    color: #00aaff;
+    text-decoration: none;
+}
+
+.company-name:hover {
+    text-decoration: underline;
+}
+
+.role {
+    font-size: 1.2rem;
+    margin-top: 5px;
+    color: #ffab00;
+}
+
+.company-description {
+    font-size: 1rem;
+    color: #cccccc;
+    margin-top: 10px;
+}
+
+.responsibilities {
+    margin-top: 20px;
+    list-style-type: disc;
+    padding-left: 20px;
+    color: #b0b0b0;
+    line-height: 1.6;
+}
+
+.card-action {
+    margin-top: 20px;
+    font-size: 1rem;
+    color: #ffffff;
+    text-align: right;
+}
+
+/* Footer Settings */
+footer {
+    background-color: #1e1e1e;
+    color: #777;
+    padding: 1rem;
+    text-align: center;
+    width: 100%;
+    box-sizing: border-box;
+    margin-top: 40px; /* Create some space between the main content and footer */
+    position: relative;
+}
+.card {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.card.in-view {
+    opacity: 1;
+    transform: translateY(0);
+}

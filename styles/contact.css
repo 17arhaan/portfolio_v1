@@ -1,0 +1,157 @@
+/* General Body and Layout Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #121212;
+    color: #ffffff;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    align-items: center; /* Center content horizontally */
+    justify-content: center; /* Center content vertically */
+}
+
+header {
+    background-color: #1e1e1e;
+    padding: 1rem 2rem;
+    width: 100%;
+    z-index: 1000;
+    position: fixed;
+    top: 0;
+}
+
+.header-logo {
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.header-logo img {
+    width: 50px;
+    margin-right: 20px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 1rem;
+    padding: 5px 10px;
+    border-radius: 4px;
+    transition: color 0.3s, background-color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #00aaff;
+    background-color: #333;
+}
+
+/* Main Content Styles */
+main {
+    padding: 150px 2rem 2rem; /* Increased top padding */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.contact-container {
+    max-width: 800px;
+    text-align: center;
+    padding: 2rem;
+    margin: 20px auto;
+    background: #222;
+    border-radius: 8px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    position: relative; /* Needed for positioning title above */
+    overflow: hidden;
+}
+
+/* Contact Title Styles */
+.contact-title {
+    position: absolute; /* Absolute position relative to the container */
+    top: -40px; /* Moves the title above the container */
+    left: 50%;
+    transform: translateX(-50%);
+    background: #00aaff;
+    color: #ffffff;
+    padding: 5px 20px;
+    border-radius: 20px;
+    font-size: 1.2rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+/* Input and Textarea Styles */
+input, textarea {
+    width: calc(100% - 30px);
+    padding: 15px;
+    margin: 12px 0;
+    border: 2px solid #555;
+    background-color: #333;
+    color: #fff;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+input:focus, textarea:focus {
+    border-color: #00aaff;
+    background-color: #333;
+    outline: none;
+}
+
+/* Button Styling */
+button {
+    width: 100%;
+    padding: 15px 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background-color: #00aaff;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0088cc;
+}
+
+/* Social Links Styling */
+.social-links {
+    padding-top: 10px;
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.social-links a {
+    color: #ffffff;
+    font-size: 24px;
+}
+
+.social-links a:hover {
+    color: #00aaff;
+}
+
+/* Footer Styling */
+footer {
+    padding: 1rem;
+    background-color: #1e1e1e;
+    color: #777;
+    text-align: center;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+}
+
+footer p {
+    font-size: 0.9rem;
+}
