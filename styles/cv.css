@@ -53,13 +53,12 @@ nav ul li a:hover {
     background-color: #333;
 }
 
-
 main {
     flex: 1;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding-top: 80px; /* Offset to avoid overlapping the header */
+    padding-top: 30px; /* Offset to avoid overlapping the header */
     padding-bottom: 60px; /* Offset to avoid overlapping the footer */
 }
 
@@ -69,24 +68,36 @@ main {
     justify-content: center;
     width: 100%;
     height: calc(100vh - 140px); /* Full viewport height minus header and footer */
+    padding: 5px;
 }
 
 .cv-iframe {
-    width: 60%; /* Set a fixed width to maintain the original PDF aspect ratio */
+    width: 100%; /* Take full width of the container */
     max-width: 800px; /* Do not exceed 800px in width */
     height: 80vh; /* Set height to 80% of the viewport */
     border: 1px solid #333;
     border-radius: 8px;
     box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5); /* Optional shadow to enhance appearance */
-    overflow: auto; /* Enable scrolling within the PDF iframe */
+    overflow: hidden; /* No internal scrolling within the iframe */
 }
 
 footer {
-    background-color: #1e1e1e;
-    color: #777;
-    padding: 1rem;
+    background-color: #1e1e1e; /* Matches the header and body */
+    color: #777; /* Subtle text color */
+    padding: 1rem 2rem; /* Consistent padding */
     text-align: center;
-    position: fixed;
+    position: fixed; /* Fixed position at the bottom */
     width: 100%;
     bottom: 0;
+    z-index: 1000; /* Ensures it's above content if necessary */
+}
+
+footer p {
+    margin: 0;
+    font-size: 1rem;
+    color: #777; /* Light text color */
+}
+
+footer p:hover {
+    color: #ffffff; /* White color on hover */
 }

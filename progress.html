@@ -14,90 +14,9 @@
 
     <!-- External CSS -->
     <link rel="stylesheet" href="styles/main.css">
-    <!-- <link rel="stylesheet" href="styles/progress.css"> -->
+    <link rel="stylesheet" href="styles/progress.css">
     <link rel="stylesheet" href="https://unpkg.com/github-calendar/dist/github-calendar-responsive.css" />
-    <style>
-        body {
-            font-family: 'Poppins', sans-serif;
-            background-color: #121212;
-            color: #ffffff;
-            margin: 0;
-            padding: 0;
-        }
 
-        header,
-        footer {
-            background-color: #1e1e1e;
-            padding: 1rem 2rem;
-        }
-
-        header {
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-
-        .experience-container {
-            margin-top: 20px;
-            padding: 20px;
-            width: 90%;
-            max-width: 1000px;
-            margin-left: auto;
-            margin-right: auto;
-            padding-bottom: 140px; /* Increased padding to create more space */
-        }
-
-        .progress-title {
-            text-align: center;
-            margin-bottom: 20px;
-            font-size: 2rem;
-            color: #00aaff;
-            text-shadow: 0 0 5px #00aaff;
-        }
-
-        .chart-container,
-        .github-calendar-container,
-        .leetcode-score-container {
-            margin: 0 auto;
-            margin-bottom: 40px;
-            max-width: 100%;
-            padding: 20px;
-            border-radius: 15px;
-            background: linear-gradient(135deg, #1e1e1e, #2a2a2a);
-            box-shadow: 0px 4px 20px rgba(0, 170, 255, 0.2);
-        }
-
-        .chart-container {
-            margin-top: 10px; /* Adjusted margin to add space above the chart */
-            padding-bottom: 20px; /* Increased padding to balance layout */
-        }
-
-        canvas {
-            display: block;
-            margin: 0 auto;
-            width: calc(100% - 60px) !important;
-            height: 300px !important; /* Reduced height to prevent oversize */
-        }
-
-        footer {
-            text-align: center;
-            padding: 20px 0;
-            color: #aaaaaa;
-            margin-top: 40px;
-        }
-
-        footer p:hover {
-            color: #ffffff;
-        }
-
-        /* Hide unnecessary elements from GitHub Calendar */
-        .github-calendar .contrib-footer,
-        .github-calendar .contrib-text,
-        .github-calendar .float-left.text-gray,
-        .github-calendar .wday {
-            display: none !important;
-        }
-    </style>
 </head>
 
 <body>
@@ -107,10 +26,6 @@
             <img src="assets/logo.png" alt="Logo of Arhaan Girdhar">
             <h1>Arhaan Girdhar</h1>
         </div>
-        <input type="checkbox" id="click" class="menu-btn">
-        <label for="click" class="menu-btn">
-            <i class="fa fa-bars fa-2x" aria-label="Menu Icon"></i>
-        </label>
         <nav>
             <ul id="nav-links">
                 <li><a href="index.html">Home</a></li>
@@ -161,7 +76,7 @@
     <script src="https://unpkg.com/github-calendar/dist/github-calendar.min.js"></script>
     <script>
             document.addEventListener('DOMContentLoaded', function () {
-                const commitData = [1, 1, 1, 5, 14, 57, 68, 41, 27, 100, 0, 0]; // Data for commits per month
+                const commitData = [1, 1, 1, 5, 14, 57, 68, 41, 27, 100, 23, 75]; // Data for commits per month
                 const maxCommit = Math.max(...commitData);
                 const yMax = maxCommit + 10; // Add a buffer to max value
 

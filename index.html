@@ -8,25 +8,18 @@
     <link rel="Icon" type="image/png" href="assets/favicon.png">
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
     <!-- FontAwesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-
     <!-- External CSS -->
-    <link rel="stylesheet" href="styles/main.css">
+     <link rel="stylesheet" href="styles/main.css">
 </head>
 
 <body>
-
     <header>
         <div class="header-logo">
             <img src="assets/logo.png" alt="Logo of Arhaan Girdhar">
             <h1>Arhaan Girdhar</h1>
         </div>
-        <input type="checkbox" id="click" class="menu-btn">
-        <label for="click" class="menu-btn">
-            <i class="fa fa-bars fa-2x" aria-label="Menu Icon"></i>
-        </label>
         <nav>
             <ul id="nav-links">
                 <li><a href="index.html">Home</a></li>
@@ -39,17 +32,15 @@
         </nav>
     </header>
 
-    <main class="main-body">
+    <main>
         <div class="main-body-1">
             <img src="assets/profile.jpg" alt="Photo of Arhaan Girdhar">
         </div>
         <div class="main-body-2">
             <p class="asp-text">Turning Vision into Reality</p>
             <p class="asp-text-1">Aspiring Software Engineer currently in 3rd year, pursuing Computer Science with a
-            Minor Specialization in AI & ML at MIT, Manipal.</p>
+                Minor Specialization in AI & ML at MIT, Manipal.</p>
         </div>
-
-        <!-- Displaying Social Media Buttons Below the "About Me" Section -->
         <section class="button-outer">
             <a href="https://www.linkedin.com/in/arhaan17" target="_blank" class="social-link" aria-label="LinkedIn">
                 <img class="app" src="assets/linkedin-svgrepo-com.svg" alt="LinkedIn Logo">
@@ -67,8 +58,10 @@
         <p>&copy; 2024 Arhaan Girdhar. All rights reserved.</p>
     </footer>
 
-    <script src="scripts/main.js"></script>
-
+    <script>
+        const nav = document.querySelector('nav');
+        nav.addEventListener('click', () => nav.classList.toggle('show'));
+    </script>
 </body>
 
 </html>

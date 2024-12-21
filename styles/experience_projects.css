@@ -146,16 +146,25 @@ main {
     text-align: right;
 }
 
-/* Footer Settings */
 footer {
     background-color: #1e1e1e;
     color: #777;
-    padding: 1rem;
     text-align: center;
+    padding: 1rem 0.5rem;
     width: 100%;
-    box-sizing: border-box;
-    margin-top: 40px; /* Create some space between the main content and footer */
-    position: relative;
+    transition: all 0.3s ease;
+    position: fixed;
+    bottom: 0;
+    z-index: 1000;
+}
+
+footer p {
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
+}
+
+footer p:hover {
+    color: #ffffff;
 }
 .card {
     opacity: 0;

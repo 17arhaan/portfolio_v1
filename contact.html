@@ -9,12 +9,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="styles/main.css">
     <link rel="stylesheet" href="styles/contact.css">
-    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
-    <script>
-        (function() {
-            emailjs.init("RLIJKGHF938Tj6_t3");
-        })();
-    </script>
 </head>
 <body>
     <header>
@@ -22,10 +16,6 @@
             <img src="assets/logo.png" alt="Logo of Arhaan Girdhar">
             <h1>Arhaan Girdhar</h1>
         </div>
-        <input type="checkbox" id="click" class="menu-btn">
-        <label for="click" class="menu-btn">
-            <i class="fa fa-bars fa-2x" aria-label="Menu Icon"></i>
-        </label>
         <nav>
             <ul id="nav-links">
                 <li><a href="index.html">Home</a></li>
@@ -37,16 +27,18 @@
             </ul>
         </nav>
     </header>
+
     <main>
         <section class="contact-container">
-            <h2>Contact Me</h2>
-            <p>Get in touch via email or follow me on social media.</p>
-            <form id="contact-form">
-                <input type="text" name="name" placeholder="Your Name" required>
-                <input type="email" name="email" placeholder="Your Email" required>
-                <textarea name="message" placeholder="Your Message" required></textarea>
-                <button type="button" onclick="sendEmail()">Send Message</button>
-            </form>
+            <h2></h2>
+            <p>Please fill out the form below, and I'll get back to you soon.</p>
+
+            <!-- Loading Spinner -->
+            <div class="loading-spinner" id="loading-spinner"></div>
+
+            <!-- Google Form Embed -->
+            <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeeUaMjWfLeMCGzbygYWd2PHF_RcojSyyNznI8b46vN2dgvKg/viewform?embedded=true" id="google-form" onload="onFormLoad()"></iframe>
+
             <div class="social-links">
                 <a href="https://twitter.com/Arrhhaan" target="_blank"><i class="fab fa-twitter"></i></a>
                 <a href="https://linkedin.com/in/arhaan17" target="_blank"><i class="fab fa-linkedin-in"></i></a>
@@ -54,9 +46,25 @@
             </div>
         </section>
     </main>
+
     <footer>
         <p>&copy; 2024 Arhaan Girdhar. All rights reserved.</p>
     </footer>
-    <script src="scripts/contact.js"></script>
+
+    <script>
+        // Show the loading spinner before the form loads
+        function showLoadingSpinner() {
+            document.getElementById('loading-spinner').classList.add('show');
+        }
+
+        // Hide the loading spinner and make the form visible once the form is loaded
+        function onFormLoad() {
+            document.getElementById('loading-spinner').classList.remove('show');
+            document.getElementById('google-form').classList.add('visible');
+        }
+
+        // Trigger loading spinner display when the page loads
+        showLoadingSpinner();
+    </script>
 </body>
 </html>
