@@ -32,11 +32,11 @@ You can visit the live version of my portfolio here:
 To run the portfolio locally:
 1. Clone the repository:
    ```bash
-   git clone https://github.com/ArhaanGirdhar/portfolio.git
+   git clone https://github.com/17arhaan/portfolio_v1.git
    ```
 2. Navigate to the project directory:
    ```bash
-   cd portfolio
+   cd portfolio_v1
    ```
 3. Open `index.html` in your browser.
 
