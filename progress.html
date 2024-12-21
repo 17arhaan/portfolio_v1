@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arhaan Girdhar - Progress</title>
+    <link rel="Icon" type="image/png" href="assets/favicon.png">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="styles/main.css">
+    <!-- <link rel="stylesheet" href="styles/progress.css"> -->
+    <link rel="stylesheet" href="https://unpkg.com/github-calendar/dist/github-calendar-responsive.css" />
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #121212;
+            color: #ffffff;
+            margin: 0;
+            padding: 0;
+        }
+
+        header,
+        footer {
+            background-color: #1e1e1e;
+            padding: 1rem 2rem;
+        }
+
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .experience-container {
+            margin-top: 20px;
+            padding: 20px;
+            width: 90%;
+            max-width: 1000px;
+            margin-left: auto;
+            margin-right: auto;
+            padding-bottom: 140px; /* Increased padding to create more space */
+        }
+
+        .progress-title {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 2rem;
+            color: #00aaff;
+            text-shadow: 0 0 5px #00aaff;
+        }
+
+        .chart-container,
+        .github-calendar-container,
+        .leetcode-score-container {
+            margin: 0 auto;
+            margin-bottom: 40px;
+            max-width: 100%;
+            padding: 20px;
+            border-radius: 15px;
+            background: linear-gradient(135deg, #1e1e1e, #2a2a2a);
+            box-shadow: 0px 4px 20px rgba(0, 170, 255, 0.2);
+        }
+
+        .chart-container {
+            margin-top: 10px; /* Adjusted margin to add space above the chart */
+            padding-bottom: 20px; /* Increased padding to balance layout */
+        }
+
+        canvas {
+            display: block;
+            margin: 0 auto;
+            width: calc(100% - 60px) !important;
+            height: 300px !important; /* Reduced height to prevent oversize */
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px 0;
+            color: #aaaaaa;
+            margin-top: 40px;
+        }
+
+        footer p:hover {
+            color: #ffffff;
+        }
+
+        /* Hide unnecessary elements from GitHub Calendar */
+        .github-calendar .contrib-footer,
+        .github-calendar .contrib-text,
+        .github-calendar .float-left.text-gray,
+        .github-calendar .wday {
+            display: none !important;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Include header navigation -->
+    <header>
+        <div class="header-logo">
+            <img src="assets/logo.png" alt="Logo of Arhaan Girdhar">
+            <h1>Arhaan Girdhar</h1>
+        </div>
+        <input type="checkbox" id="click" class="menu-btn">
+        <label for="click" class="menu-btn">
+            <i class="fa fa-bars fa-2x" aria-label="Menu Icon"></i>
+        </label>
+        <nav>
+            <ul id="nav-links">
+                <li><a href="home.html">Home</a></li>
+                <li><a href="CV.html">CV</a></li>
+                <li><a href="experience.html">Experience</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="progress.html">Progress</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+
+        <div class="experience-container">
+            <!-- Commit Activity Chart Section -->
+            <div class="chart-container">
+                <div class="progress-title">
+                    <h2>Commit Activity</h2>
+                </div>
+                <canvas id="gitProgressChart"></canvas>
+            </div>
+
+            <!-- GitHub Calendar Section -->
+            <div class="github-calendar-container">
+                <div class="progress-title">
+                    <h2>Git Calendar</h2>
+                </div>
+                <div class="github-calendar"></div>
+            </div>
+
+            <!-- LeetCode Score Section -->
+            <div class="leetcode-score-container">
+                <div class="progress-title">
+                    <h2>LeetCode Score</h2>
+                </div>
+                <div class="leetcode-score" id="leetcode-score"></div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Arhaan Girdhar. All rights reserved.</p>
+    </footer>
+
+    <script src="scripts/progress.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://unpkg.com/github-calendar/dist/github-calendar.min.js"></script>
+    <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                const commitData = [1, 1, 1, 5, 14, 57, 68, 41, 27, 100, 0, 0]; // Data for commits per month
+                const maxCommit = Math.max(...commitData);
+                const yMax = maxCommit + 10; // Add a buffer to max value
+
+                const ctx = document.getElementById('gitProgressChart').getContext('2d');
+                const gitProgressChart = new Chart(ctx, {
+                    type: 'line',
+                    data: {
+                        labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
+                        datasets: [{
+                            label: 'Commits per Month',
+                            data: commitData,
+                            borderColor: '#00aaff',
+                            backgroundColor: 'rgba(0, 170, 255, 0.2)',
+                            borderWidth: 2,
+                            pointBackgroundColor: '#ffffff',
+                            pointBorderColor: '#00aaff',
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        scales: {
+                            y: {
+                                beginAtZero: true,
+                                suggestedMax: yMax, // Use calculated max value
+                                ticks: {
+                                    color: '#ffffff'
+                                },
+                                grid: {
+                                    color: 'rgba(255, 255, 255, 0.1)'
+                                }
+                            },
+                            x: {
+                                ticks: {
+                                    color: '#ffffff'
+                                },
+                                grid: {
+                                    color: 'rgba(255, 255, 255, 0.1)'
+                                }
+                            }
+                        },
+                        plugins: {
+                            legend: {
+                                labels: {
+                                    color: '#ffffff'
+                                }
+                            }
+                        }
+                    }
+                });
+
+            // GitHub Calendar Integration
+            GitHubCalendar(".github-calendar", "17Arhaan", {
+                responsive: true,
+                global_stats: false,
+                summary_text: '',
+                theme: {
+                    background: '#1f1f1f',
+                    text: '#ffffff',
+                    level0: '#3a3a3a',
+                    level1: '#00876c',
+                    level2: '#62c370',
+                    level3: '#ffe156',
+                    level4: '#ff495c'
+                }
+            });
+
+            // Fetch Live LeetCode Score
+            async function fetchLeetCodeScore() {
+                try {
+                    const response = await fetch('https://leetcode-stats-api.herokuapp.com/arhaan17');
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    const data = await response.json();
+                    const leetcodeScore = document.getElementById('leetcode-score');
+                    leetcodeScore.innerHTML = `<h3>LeetCode Score</h3><p>Total Problems Solved: ${data.totalSolved}</p><p>Easy: ${data.easySolved} | Medium: ${data.mediumSolved} | Hard: ${data.hardSolved}</p>`;
+                } catch (error) {
+                    console.error('Error fetching LeetCode score:', error);
+                }
+            }
+
+            fetchLeetCodeScore();
+        });
+    </script>
+</body>
+
+</html>
