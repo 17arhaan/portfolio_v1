@@ -127,7 +127,7 @@ footer p:hover {
     nav ul.show {
         display: flex; /* Show the menu items when the "show" class is added */
     }
-
+    
     nav ul li a {
         font-size: 1.2rem;
         padding: 10px 15px;

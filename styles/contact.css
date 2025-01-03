@@ -1,13 +1,14 @@
-
+/* Body and HTML */
 body, html {
     margin: 0;
     padding: 0;
     height: 100%;
     font-family: 'Poppins', sans-serif;
     background-color: #121212;
-    overflow: hidden; /* Remove the scrollbar */
+    overflow: auto; /* Allow scrolling */
 }
 
+/* Header */
 header {
     background-color: #1e1e1e;
     padding: 1rem 2rem;
@@ -59,7 +60,7 @@ nav ul li a:hover {
     padding: 8px 12px;
 }
 
-/* Hide the menu button by default */
+/* Mobile menu button */
 .menu-btn {
     display: none;
 }
@@ -102,6 +103,7 @@ nav ul li a:hover {
         font-size: 1.5rem;
     }
 }
+
 /* Main content and form container */
 .contact-container {
     display: flex;
@@ -129,7 +131,7 @@ nav ul li a:hover {
     margin-bottom: 20px;
 }
 
-/* Make the iframe responsive and centered with more width */
+/* Make the iframe responsive and centered */
 .contact-container iframe {
     width: 100%;
     max-width: 1000px;
@@ -170,7 +172,6 @@ nav ul li a:hover {
     transform: scale(1.2);
 }
 
-
 /* Loading state (spinner) */
 .loading-spinner {
     display: none;
@@ -195,6 +196,7 @@ nav ul li a:hover {
 .loading-spinner.show {
     display: block;
 }
+
 footer {
     background-color: #1e1e1e;
     color: #777;
