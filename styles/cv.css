@@ -104,7 +104,7 @@ footer p:hover {
 }
 
 
-/* Hamburger menu (for small screens) */
+/* Hide the menu button by default */
 .menu-btn {
     display: none;
 }
@@ -112,24 +112,28 @@ footer p:hover {
 @media (max-width: 768px) {
     nav ul {
         list-style: none;
-        display: flex;
-        gap: 1.5rem;
+        display: none; /* Hide the menu items by default */
+        flex-direction: column;
+        gap: 1rem;
+        width: 100%;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        background-color: #1e1e1e;
+        padding: 1rem;
+        z-index: 999;
+    }
+
+    nav ul.show {
+        display: flex; /* Show the menu items when the "show" class is added */
     }
 
     nav ul li a {
-        text-decoration: none;
-        color: #ffffff;
-        font-size: 1rem;
-        padding: 5px 10px;
-        border-radius: 4px;
-        transition: color 0.3s, background-color 0.3s;
+        font-size: 1.2rem;
+        padding: 10px 15px;
     }
 
-    nav ul li a:hover {
-        color: #00aaff;
-        background-color: #333;
-    }
-
+    /* Menu button appears on smaller screens */
     .menu-btn {
         display: block;
         cursor: pointer;
@@ -137,5 +141,9 @@ footer p:hover {
         position: absolute;
         right: 20px;
         top: 20px;
+    }
+
+    .menu-btn i {
+        font-size: 1.5rem;
     }
 }
