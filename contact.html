@@ -1,22 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Arhaan Girdhar - Contact</title>
+    <title>Arhaan Girdhar - Experience</title>
     <link rel="Icon" type="image/png" href="assets/favicon.png">
+    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- FontAwesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <!-- External CSS -->
     <link rel="stylesheet" href="styles/main.css">
     <link rel="stylesheet" href="styles/contact.css">
 </head>
+
 <body>
+    <!-- Include header navigation -->
     <header>
         <div class="header-logo">
             <img src="assets/logo.png" alt="Logo of Arhaan Girdhar">
             <h1>Arhaan Girdhar</h1>
         </div>
         <nav>
+            <!-- Hamburger menu button -->
+            <div class="menu-btn" id="menu-btn">
+                <i class="fas fa-bars"></i>
+            </div>
             <ul id="nav-links">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="CV.html">CV</a></li>
@@ -27,6 +39,7 @@
             </ul>
         </nav>
     </header>
+
 
     <main>
         <section class="contact-container">
@@ -51,6 +64,7 @@
         <p>&copy; 2024 Arhaan Girdhar. All rights reserved.</p>
     </footer>
 
+    <script src="scripts/hamburger.js"></script>
     <script>
         // Show the loading spinner before the form loads
         function showLoadingSpinner() {
@@ -66,5 +80,6 @@
         // Trigger loading spinner display when the page loads
         showLoadingSpinner();
     </script>
+
 </body>
 </html>

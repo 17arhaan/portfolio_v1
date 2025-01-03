@@ -1,14 +1,4 @@
-body {
-    font-family: 'Poppins', sans-serif;
-    background-color: #121212;
-    color: #ffffff;
-    margin: 0;
-    padding: 0;
-    overflow: hidden; /* Remove scrollbars from the body */
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-}
+
 
 header {
     background-color: #1e1e1e;
@@ -37,6 +27,7 @@ nav ul {
     list-style: none;
     display: flex;
     gap: 1.5rem;
+    margin-left: auto;
 }
 
 nav ul li a {
@@ -53,51 +44,98 @@ nav ul li a:hover {
     background-color: #333;
 }
 
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #121212;
+    color: #ffffff;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Main content layout */
 main {
     flex: 1;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding-top: 30px; /* Offset to avoid overlapping the header */
-    padding-bottom: 60px; /* Offset to avoid overlapping the footer */
+    padding-top: 80px; /* Offset for fixed header */
+    padding-bottom: 60px; /* Offset for fixed footer */
 }
 
 .cv-container {
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
     width: 100%;
     height: calc(100vh - 140px); /* Full viewport height minus header and footer */
-    padding: 5px;
 }
 
 .cv-iframe {
-    width: 100%; /* Take full width of the container */
-    max-width: 800px; /* Do not exceed 800px in width */
-    height: 80vh; /* Set height to 80% of the viewport */
+    width: 100%; /* Full width */
+    max-width: 800px; /* Limit to 800px width */
+    height: 80vh; /* 80% of the viewport height */
     border: 1px solid #333;
     border-radius: 8px;
-    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5); /* Optional shadow to enhance appearance */
-    overflow: hidden; /* No internal scrolling within the iframe */
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5); /* Optional shadow */
 }
 
 footer {
-    background-color: #1e1e1e; /* Matches the header and body */
-    color: #777; /* Subtle text color */
-    padding: 1rem 2rem; /* Consistent padding */
+    background-color: #1e1e1e;
+    color: #777;
     text-align: center;
-    position: fixed; /* Fixed position at the bottom */
+    padding: 1rem 0.5rem;
     width: 100%;
+    transition: all 0.3s ease;
+    position: fixed;
     bottom: 0;
-    z-index: 1000; /* Ensures it's above content if necessary */
+    z-index: 1000;
 }
 
 footer p {
-    margin: 0;
-    font-size: 1rem;
-    color: #777; /* Light text color */
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
 }
 
 footer p:hover {
-    color: #ffffff; /* White color on hover */
+    color: #ffffff;
+}
+
+
+/* Hamburger menu (for small screens) */
+.menu-btn {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    nav ul {
+        list-style: none;
+        display: flex;
+        gap: 1.5rem;
+    }
+
+    nav ul li a {
+        text-decoration: none;
+        color: #ffffff;
+        font-size: 1rem;
+        padding: 5px 10px;
+        border-radius: 4px;
+        transition: color 0.3s, background-color 0.3s;
+    }
+
+    nav ul li a:hover {
+        color: #00aaff;
+        background-color: #333;
+    }
+
+    .menu-btn {
+        display: block;
+        cursor: pointer;
+        color: #fff;
+        position: absolute;
+        right: 20px;
+        top: 20px;
+    }
 }

@@ -18,3 +18,23 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
+document.addEventListener('DOMContentLoaded', () => {
+    const cards = document.querySelectorAll('.card');
+
+    // Function to check if the card is in the viewport
+    function checkInView() {
+        cards.forEach(card => {
+            const cardTop = card.getBoundingClientRect().top;
+            const cardBottom = card.getBoundingClientRect().bottom;
+
+            // Check if the card is within the viewport (visible)
+            if (cardTop < window.innerHeight && cardBottom >= 0) {
+                card.classList.add('in-view');
+            }
+        });
+    }
+
+    // Trigger on page load and on scroll
+    checkInView();
+    window.addEventListener('scroll', checkInView);
+});
