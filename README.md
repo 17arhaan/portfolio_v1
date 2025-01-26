@@ -15,7 +15,7 @@ You can visit the live version of my portfolio here:
 
 ## 🛠️ Built With
 - **Frontend**: HTML, CSS, JavaScript, and React.js
-- **Hosting**: GitHub Pages
+- **Hosting**: GoDaddy
 - **Design**: Responsive and modern UI for seamless experience across devices
 
 ## 📂 Repository Structure
