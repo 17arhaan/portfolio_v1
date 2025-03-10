@@ -72,8 +72,8 @@
                     <a href="https://leetcode.com/arhaan17/" target="_blank">
                         <img src="assets/leetcodelogo.png" alt="LeetCode Logo" style="width: 40px; height: 40px; vertical-align: middle; margin-right: 10px;">
                     </a>
-                    <p>Total Problems Solved: 73</p>
-                    <p>Easy: 33 | Medium: 31 | Hard: 9</p>
+                    <p>Total Problems Solved: 80</p>
+                    <p>Easy: 33 | Medium: 38 | Hard: 9</p>
                 </div>
             </div>
             
@@ -91,7 +91,7 @@
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             // Commit Activity Chart
-            const commitData = [123,56,187,236,199, 1]; // Data for commits per month
+            const commitData = [56,187,236,199,289,1]; // Data for commits per month
             const maxCommit = Math.max(...commitData);
             const yMax = maxCommit + 10;
         
@@ -99,7 +99,7 @@
             const gitProgressChart = new Chart(ctx, {
                 type: 'line',
                 data: {
-                    labels: ["   _   ","November ' 24 ", "December ' 24","January ' 25", "February ' 25","March ' 25"],
+                    labels: ["   _   ", "December ' 24","January ' 25", "February ' 25","March ' 25","April ' 25 "],
                     datasets: [{
                         label: 'Commits per Month',
                         data: commitData,
