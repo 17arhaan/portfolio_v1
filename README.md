@@ -3,12 +3,6 @@
 
 Welcome to my personal portfolio! 🌟 This website showcases my projects, skills, achievements, and professional journey.
 
-## 📌 Features
-- **About Me**: Learn more about my background, interests, and expertise.
-- **Projects**: Highlights of my work, including links to live demos and GitHub repositories.
-- **Skills**: A showcase of the technologies and tools I am proficient in.
-- **Contact**: Easy access to connect with me via email or social media.
-
 ## 🌐 Live Preview
 You can visit the live version of my portfolio here:  
 [arhaanportfolio.in](https://arhaanportfolio.in)
